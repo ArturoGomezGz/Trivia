@@ -4,27 +4,38 @@ let addPregunta = document.getElementById("addPregunta")
 let addRespuesta = document.getElementById("addRespuesta")
 let addFake1 = document.getElementById("addFake1")
 let addFake2 = document.getElementById("addFake2")
+const addButton = document.getElementById("addButton")
+
+addButton.addEventListener("click", () => agregarpreguntas(num))
+
+num = "pregunta 4"
+
+
+/* addButton.addEventListener("click", () => saluda(miNombre))
+
+function saluda(nombre){
+    alert("hola" + nombre)
+}
+miNombre = "arturo" */
+
 
 nombreTirulo.innerText = "Trivia"
 
 let listaDePreguntas = [];
 
 let pregunta1 = {
-    no: 1,
     pregunta: "Capital de Brasil?",
     respuesta: "Brasilia",
     fake1: "Rio de Janeiro",
     fake2: "San Jose"
 }
 let pregunta2 = {
-    no: 2,
     pregunta: "Cual de estos paises no ha ganado ningun mundial?",
     respuesta: "Holanda",
     fake1: "Uruguay",
     fake2: "Italia"
 } 
 let pregunta3 = {
-    no: 3,
     pregunta: "Como se llamaba el payaso de los Simpsons?",
     respuesta: "Krusty",
     fake1: "Klein",
@@ -33,7 +44,6 @@ let pregunta3 = {
 
 /* 
 let pregunta = {
-    no: undefined,
     pregunta: "",
     respuesta: "",
     fake1: "",
@@ -87,21 +97,20 @@ function renderPreguntas(){
 
 renderPreguntas();
 
-function agregarpreguntas(i){
+function agregarpreguntas(name){
     function clean(){
         main.innerText = ""
     }
     clean()
 
-    i = {
-        no: undefined,
+    name = {
         pregunta: addPregunta.value,
         respuesta: addRespuesta.value,
         fake1: addFake1.value,
         fake2: addFake2.value
     }
 
-    listaDePreguntas.push(i)
+    listaDePreguntas.push(name)
 
     addPregunta.value = "";
     addRespuesta.value = "";
