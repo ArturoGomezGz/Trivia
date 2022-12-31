@@ -1,0 +1,53 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+header{
+    width: 100%;
+    height: 50px;
+}
+main{
+    margin-top: 50px;
+}
+#titulo-nombre{
+    margin: auto;
+    margin-top: 40px;
+    text-align: center;
+    width: 250px;
+    color: black;
+}
+.tarjeta{
+    background-color: orange;
+    width: 65%;
+    min-width: 400px;
+    margin: auto;
+    padding: 15px;
+    margin-bottom: 30px;
+}
+.pregunta{
+    margin-bottom: 25px;
+    background-color: lightcyan;
+    padding: 5px;
+    text-align: center;
+}
+.respuestas ul li{
+    background-color: lightcyan;
+    text-align: center;
+    margin: 10px;
+    width: 230px;
+    max-width: 600px;
+    padding: 5px;
+    list-style: none;
+}
+.respuestas ul li:hover{
+    background-color: lightblue;
+    text-align: center;
+    margin: 10px;
+    width: 230px;
+    max-width: 600px;
+    padding: 5px;
+}
+
+.tarjeta, .pregunta, .respuestas li{
+    border-radius: 20px;
+}

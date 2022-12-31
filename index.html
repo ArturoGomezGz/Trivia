@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trivia Familiar</title>
+    <link rel="stylesheet" href="estilos/main.css">
+</head>
+<body>
+    <header>
+        <h1 id="titulo-nombre"></h1>
+    </header>
+    <main id="main">
+
+    </main>
+    <aside id="agregador">
+        <form action="">
+            <label for="pregunta">
+                <span>pregunta</span>
+                <input type="text" id="addPregunta">
+            </label>
+            <label for="respuesta">
+                <span>respuesta</span>
+                <input type="text" id="addRespuesta">
+            </label>
+            <label for="fake1">
+                <span>fake1</span>
+                <input type="text" id="addFake1">
+            </label>
+            <label for="fake2">
+                <span>fake2</span>
+                <input type="text" id="addFake2">
+            </label>
+            <button onclick="agregarpreguntas('pregunta')">ADD</button>
+        </form>
+    </aside>
+</body>
+<script src="script.js"></script>
+</html>
