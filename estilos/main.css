@@ -1,6 +1,7 @@
 *{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 header{
     width: 100%;
@@ -50,4 +51,25 @@ main{
 
 .tarjeta, .pregunta, .respuestas li{
     border-radius: 20px;
+}
+
+#agregador{
+    background-color: cyan;
+    width: 65%;
+    margin: auto;
+    border-radius: 20px;
+    padding: 20px;
+
+}
+#agregador{
+    display: flex;
+    flex-wrap: wrap;
+}
+#agregador form{
+    display: flex;
+    flex-wrap: wrap;
+}
+#agregador form label{
+    width: 100%;
+    background-color: rebeccapurple;
 }

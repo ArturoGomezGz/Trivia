@@ -1,23 +1,12 @@
-let nombreTirulo = document.getElementById("titulo-nombre")
-const main = document.getElementById("main")
-let addPregunta = document.getElementById("addPregunta")
-let addRespuesta = document.getElementById("addRespuesta")
-let addFake1 = document.getElementById("addFake1")
-let addFake2 = document.getElementById("addFake2")
-const addButton = document.getElementById("addButton")
+let nombreTirulo = document.getElementById("titulo-nombre");
+const main = document.getElementById("main");
+let addPregunta = document.getElementById("addPregunta");
+let addRespuesta = document.getElementById("addRespuesta");
+let addFake1 = document.getElementById("addFake1");
+let addFake2 = document.getElementById("addFake2");
+const addButton = document.getElementById("addButton");
 
-addButton.addEventListener("click", () => agregarpreguntas(num))
-
-num = "pregunta 4"
-
-
-/* addButton.addEventListener("click", () => saluda(miNombre))
-
-function saluda(nombre){
-    alert("hola" + nombre)
-}
-miNombre = "arturo" */
-
+addButton.addEventListener("click", () => agregarpreguntas());
 
 nombreTirulo.innerText = "Trivia"
 
@@ -29,35 +18,41 @@ let pregunta1 = {
     fake1: "Rio de Janeiro",
     fake2: "San Jose"
 }
+listaDePreguntas.push(pregunta1);
+
 let pregunta2 = {
     pregunta: "Cual de estos paises no ha ganado ningun mundial?",
     respuesta: "Holanda",
     fake1: "Uruguay",
     fake2: "Italia"
 } 
+listaDePreguntas.push(pregunta2);
+
 let pregunta3 = {
     pregunta: "Como se llamaba el payaso de los Simpsons?",
     respuesta: "Krusty",
     fake1: "Klein",
     fake2: "Kevin"
-} 
+}
+listaDePreguntas.push(pregunta3);
 
-/* 
-let pregunta = {
+let pregunta4 = {
+    pregunta: "Como se llamaba el restaurante del enemigo de Don Cangrejo?",
+    respuesta: "Caldera de hamburguesa",
+    fake1: "Balde de carnada",
+    fake2: "Cubeta arenosa"
+}
+listaDePreguntas.push(pregunta4);
+
+
+/* let pregunta = {
     pregunta: "",
     respuesta: "",
     fake1: "",
     fake2: ""
-} 
-*/
-
-function createPreguntas() {
-    listaDePreguntas.push(pregunta1);
-    listaDePreguntas.push(pregunta2);
-    listaDePreguntas.push(pregunta3)
 }
+listaDePreguntas.push(pregunta); */
 
-createPreguntas();
 
 function renderPreguntas(){
     for(question of listaDePreguntas){
@@ -76,6 +71,7 @@ function renderPreguntas(){
         
         const opcion1 = document.createElement("li");
         opcion1.innerText = question.respuesta;
+        opcion1.classList.add("respuesta-correcta");
         const opcion2 = document.createElement("li");
         opcion2.innerText = question.fake1;
         const opcion3 = document.createElement("li");
@@ -98,24 +94,29 @@ function renderPreguntas(){
 renderPreguntas();
 
 function agregarpreguntas(name){
-    function clean(){
-        main.innerText = ""
+    if (addPregunta.value == "pregunta") {
+        alert("primero agrega texto");
+    } else {
+        function clean(){
+            main.innerText = ""
+        }
+        clean()
+    
+        name = {
+            pregunta: addPregunta.value,
+            respuesta: addRespuesta.value,
+            fake1: addFake1.value,
+            fake2: addFake2.value
+        }
+    
+        listaDePreguntas.push(name)
+    
+        addPregunta.value = "pregunta";
+        addRespuesta.value = "";
+        addFake1.value = "";
+        addFake2.value = ""
+    
+        renderPreguntas()
     }
-    clean()
-
-    name = {
-        pregunta: addPregunta.value,
-        respuesta: addRespuesta.value,
-        fake1: addFake1.value,
-        fake2: addFake2.value
-    }
-
-    listaDePreguntas.push(name)
-
-    addPregunta.value = "";
-    addRespuesta.value = "";
-    addFake1.value = "";
-    addFake2.value = ""
-
-    renderPreguntas()
 }
+
