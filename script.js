@@ -71,6 +71,7 @@ function renderPreguntas(){
 
         const preguntah2 = document.createElement("h2")
         preguntah2.innerText = question.pregunta;
+        preguntah2.classList.add("pregunta");
 
         const lista = document.createElement("ul");
         
@@ -81,6 +82,10 @@ function renderPreguntas(){
         opcion2.innerText = question.fake1;
         const opcion3 = document.createElement("li");
         opcion3.innerText = question.fake2;
+
+        opcion1.classList.add("opciones");
+        opcion2.classList.add("opciones");
+        opcion3.classList.add("opciones");
 
         lista.appendChild(opcion1);
         lista.appendChild(opcion2);

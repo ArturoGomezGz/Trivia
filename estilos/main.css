@@ -91,3 +91,10 @@ main{
     margin: auto;
     padding: 1px;
 }
+
+.pregunta{
+    font-size: 20px;
+}
+.opciones{
+    font-size: 15px;
+}
